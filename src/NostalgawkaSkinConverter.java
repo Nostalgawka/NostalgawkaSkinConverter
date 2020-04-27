@@ -7,9 +7,7 @@ import java.io.IOException;
 public class NostalgawkaSkinConverter {
     public static void main(String args[]) throws IOException {
         File skinFile = new File(args[0]);
-        BufferedImage skinOld = ImageIO.read(skinFile);
-        BufferedImage skinNew = skinOld.getSubimage(0, 0, 64, 32);
-        ImageIO.write(skinNew, "png", skinFile);
+        ImageIO.write(ImageIO.read(skinFile).getSubimage(0, 0, 64, 32), "png", skinFile);
         System.out.println("Zapisano!");
     }
 }
